@@ -1,0 +1,14 @@
+{
+  "name": "yashil-belbog",
+  "version": "1.1.0",
+  "description": "«Яшил белбоғ» — экологик мониторинг платформаси",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

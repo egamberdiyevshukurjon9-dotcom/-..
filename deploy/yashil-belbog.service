@@ -1,0 +1,24 @@
+# systemd хизмати: сервер қайта юкланганда ҳам платформа ўзи ишга тушади.
+# Ўрнатиш: DEPLOY.md га қаранг.
+[Unit]
+Description=Yashil belbog ecological monitoring platform
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=yashil
+WorkingDirectory=/opt/yashil-belbog
+Environment=PORT=5174
+Environment=HOST=0.0.0.0
+Environment=CACHE_MIN=10
+ExecStart=/usr/bin/node /opt/yashil-belbog/server.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
